@@ -7,7 +7,7 @@ if(message === null){
     alert('Отменено пользователем!');
 } else if(ADMIN_PASSWORD === message){
     alert('Добро пожаловать!');
-} else if(ADMIN_PASSWORD !== message){
+} else(ADMIN_PASSWORD !== message){
     alert('Доступ запрещен, неверный пароль!');}
 
 

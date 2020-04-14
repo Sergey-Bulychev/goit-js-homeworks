@@ -7,7 +7,7 @@ let quantity = +prompt('Введите количество дройдов', '')
 
 if (quantity === null) {
   alert('Отменено пользователем!');
-} else if (quantity * pricePerDroid >= credits) {
+} else if (quantity * pricePerDroid > credits) {
   alert('Недостаточно средств на счету!');
 } else if (quantity * pricePerDroid <= credits) {
   totalPrice = quantity * pricePerDroid;

@@ -4,7 +4,7 @@ let total = 0;
 
 while (input !== null) {
   input = +prompt('Введите число:', '');
-  if (true) break;
+  if (isNaN(input)) break;
   total += input;
 }
 alert(`Общая сумма чисел равна ${total}`);

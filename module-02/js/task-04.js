@@ -1,15 +1,18 @@
 'use strict';
-const formatString = function (string) {
-  let symbols = string.split('');
-  for (let i = 0; i < symbols.length; i++) {
-    if (i < 40) {
-      return symbols.join('');
-    } else if (i > 40) {
-      return symbols.join('', 40);
-    }
-  }
-};
-
+// const formatString = function (string) {
+//   let symbols = string.split('');
+//   for (let i = 0; i < symbols.length; i++) {
+//     if (i < 40) {
+//       return symbols.join('');
+//     } else if (i > 40) {
+//       return symbols.join('', 40);
+//     }
+//   }
+// };
+const formatString = (string, stringMaxLength = 40) =>
+  string.length > stringMaxLength
+    ? `${string.slice(0, stringMaxLength)}...`
+    : string;
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */

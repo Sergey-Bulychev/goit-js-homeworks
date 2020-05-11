@@ -1,14 +1,19 @@
 'use strict';
 const checkForSpam = function (message) {
-  words = message.split(' ');
-  let answer;
-  if (words.includes('spam' || 'sale')) {
-    return (answer = true);
+  words = message;
+
+  if (
+    words.includes('spam'.toLowerCase()) ||
+    words.includes('sale'.toLowerCase())
+  ) {
+    return true;
   } else {
-    return (answer = false);
+    return false;
   }
 
-  return answer;
+  return (
+    words.includes('spam'.toLowerCase()) || words.includes('sale'.toLowerCase())
+  );
 };
 
 /*

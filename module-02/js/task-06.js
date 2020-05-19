@@ -1,18 +1,22 @@
 'use strict';
+const No_Number = 'Было введено не число, попробуйте еще раз';
 let input;
 const numbers = [];
 let total = 0;
 
-function arraySum(numbers) {
-  while (input !== null) {
-    input = +prompt('Введите число:', '');
-    if (isNaN(input)) break;
-    for (var i = 0; i < numbers.length; i++) {
-      total += numbers[i];
-    }
-    console.log(total);
+while (input !== null) {
+  input = prompt('Введите число:', 0);
+  if (input === null) break;
+  const userNumber = +input;
+  if (Number.isNaN(userNumber)) {
+    alert(No_Number);
+  } else {
+    numbers.push(userNumber);
   }
-  arraySum(numbers);
 }
-
-alert(`Общая сумма чисел равна ${total}`);
+if (numbers.length > 0) {
+  for (let i = 0; i < numbers.length; i += 1) {
+    total += numbers[i];
+  }
+}
+const message = `Общая сумма равна ${total}`;

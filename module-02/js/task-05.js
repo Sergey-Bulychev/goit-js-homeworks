@@ -1,21 +1,24 @@
 'use strict';
-const checkForSpam = function (message) {
-  words = message;
+// const checkForSpam = function (message) {
+//   words = message;
 
-  if (
-    words.includes('spam'.toLowerCase()) ||
-    words.includes('sale'.toLowerCase())
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+//   if (
+//     words.includes('spam'.toLowerCase()) ||
+//     words.includes('sale'.toLowerCase())
+//   ) {
+//     return true;
+//   } else {
+//     false;
+//   }
 
-  return (
-    words.includes('spam'.toLowerCase()) || words.includes('sale'.toLowerCase())
-  );
+//   return (
+//     words.includes('spam'.toLowerCase()) || words.includes('sale'.toLowerCase())
+//   );
+// };
+const checkForSpam = str => {
+  const source = str.toLowerCase();
+  return source.includes('spam') || source.includes('sale');
 };
-
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */

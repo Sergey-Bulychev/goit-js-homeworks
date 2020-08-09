@@ -10,7 +10,7 @@ class Storage {
     this.product.push(item);
   }
   removeItem(item) {
-    let items = this.products.filter(items => items !== item);
+    let items = (this.products = filter(items => items !== item));
     this.products.splice(0);
     this.products.push(...items);
   }

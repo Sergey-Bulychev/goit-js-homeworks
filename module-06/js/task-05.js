@@ -1,7 +1,6 @@
 'use strict';
 import users from './users.js';
-const getUserWithEmail = (users, email) =>
-  (arr = arr.find(x => x.email === email));
+const getUserWithEmail = (user, email) => user.find(x => x.email === email);
 // твой код
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}

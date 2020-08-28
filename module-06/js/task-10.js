@@ -6,3 +6,4 @@ const getSortedUniqueSkills = users =>
     .reduce((accum, skill) => [...accum, ...skill], [])
     .sort((a, b) => a.localeCompare(b, 'en'))
     .filter((skill, i, array) => array.indexOf(skill) === i);
+    console.log(getSortedUniqueSkills(users));

@@ -1,17 +1,41 @@
 'use strict';
 class Storage {
   constructor(product) {
-    this.product = product;
-  }
-  getItems() {
-    return this.product;
-  }
-  addItem(item) {
-    this.product.push(item);
-  }
-  removeItem(item) {
-    let items = (this.products = filter(items => items !== item));
-    this.products.splice(0);
-    this.products.push(...items);
+    this.products = product;
   }
 }
+
+// getItems(); //- возвращает массив текущих товаров
+const getItems = function () {
+  return this.products;
+};
+Storage.prototype.getItems = getItems;
+
+// addItem(item); //- получает новый товар и добавляет его к текущим
+const addItem = function (item) {
+  this.products.push(item);
+};
+Storage.prototype.addItem = addItem;
+// removeItem(item); //- получет товар и, если он есть, удаляет его из текущих
+const removeItem = function (item) {
+  let items = this.products.filter(items => items !== item); //если значение  найдено  то не записывается в it
+  this.products.splice(0); // удалили все значения  в массиве
+  this.products.push(...items); //Заполнили копией отфильтрованного  массивом
+};
+Storage.prototype.removeItem = removeItem;
+
+const storage = new Storage([
+  'Нанитоиды',
+  'Пролонгер',
+  'Железные жупи',
+  'Антигравитатор',
+]);
+
+const items = storage.getItems();
+console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
+
+storage.addItem('Дроид');
+console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+
+storage.removeItem('Пролонгер');
+console.table(items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]

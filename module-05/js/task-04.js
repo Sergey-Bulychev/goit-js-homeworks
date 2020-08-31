@@ -19,3 +19,15 @@ class StringBuilder {
     this.prepend(str);
   }
 }
+const builder = new StringBuilder('.');
+
+const items = builder.returnValue();
+
+builder.append('^');
+console.log(items.join('')); // '.^'
+
+builder.prepend('^');
+console.log(items.join('')); // '^.^'
+
+builder.pad('=');
+console.log(items.join('')); // '=^.^='

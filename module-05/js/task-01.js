@@ -3,10 +3,10 @@ const Account = function ({ login = '', email = '' }) {
   this.login = login;
   this.email = email;
 };
-const Info = function () {
+
+Account.prototype.getInfo = function () {
   console.log(`Login: ${this.login}, Email: ${this.email}`);
 };
-Account.prototype.getInfo = Info;
 
 console.log(Account.prototype.getInfo); // function
 

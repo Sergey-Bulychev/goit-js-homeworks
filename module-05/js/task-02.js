@@ -1,5 +1,10 @@
 'use strict';
-// class User {
+class User {
+  constructor(user) {
+    this.users = user;
+  }
+}
+
 const User = function ({ name = '', age = '', followers = '' }) {
   this.name = name;
   this.age = age;
@@ -11,8 +16,6 @@ const Info = function () {
   );
 };
 User.prototype.getInfo = Info;
-
-// }
 
 const mango = new User({
   name: 'Mango',

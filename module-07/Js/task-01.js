@@ -3,6 +3,7 @@ const items = document.querySelectorAll('ul#categories .item'); //Нашли э�
 const items2 = document.querySelector('#categories').children;
 
 console.log(`В списке ${items.length} категории.`);
-const headItems = document.querySelectorAll('ul#categories .item'); // мог использовать items, не делав эту переменную
-//выбрали [0] элемент в массиве  и вывели его значения
-headItems.forEach((item) => console.log(item.children[0].textContent));
+const headItems = document.querySelectorAll('ul#categories .item'); 
+// headItems.forEach((item) => console.log(item.children[0].textContent));
+headItems.forEach((item) =>
+	console.log(item.firstElementChild.textContent, item.firstElementChild.nextElementSibling.children.length));

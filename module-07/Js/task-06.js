@@ -6,7 +6,7 @@ function even1(keyup, elem) {
 	const targData = keyup.target.dataset.length;
 	const targValue = keyup.target.value.length;
 
-	if (targData >= targValue) {
+	if (targData > targValue) {
 		elem.classList.remove('valid');
 		return elem.classList.add('invalid');
 	}
